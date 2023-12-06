@@ -1,4 +1,4 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 const settingsSlice = createSlice({
   initialState: {
@@ -9,16 +9,16 @@ const settingsSlice = createSlice({
   },
   name: "settings",
   reducers: {
-    setHasSeenOnboarding(state, action) {
+    setHasSeenOnboarding(state, action: PayloadAction<boolean>) {
       state.hasSeenOnboarding = action.payload;
     },
-    setHasSeenNotificationsScreen(state, action) {
+    setHasSeenNotificationsScreen(state, action: PayloadAction<boolean>) {
       state.hasSeenNotificationsScreen = action.payload;
     },
-    setHasSeenPaymentMethodsScreen(state, action) {
+    setHasSeenPaymentMethodsScreen(state, action: PayloadAction<boolean>) {
       state.hasSeenPaymentMethodsScreen = action.payload;
     },
-    setHasSeenLocationScreen(state, action) {
+    setHasSeenLocationScreen(state, action: PayloadAction<boolean>) {
       state.hasSeenLocationScreen = action.payload;
     },
   },
