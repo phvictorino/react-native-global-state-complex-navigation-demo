@@ -1,7 +1,8 @@
-import { ReactNode } from "react";
+import { PropsWithChildren, ReactNode } from "react";
 import { SafeAreaView, Text } from "react-native";
 
-export const Layout = ({ text, Button }: { text: string; Button?: ReactNode }) => {
+type Props = { text: string; Button?: ReactNode };
+export const Layout = ({ text, Button, children }: PropsWithChildren<Props>) => {
   return (
     <SafeAreaView
       style={{
@@ -13,6 +14,7 @@ export const Layout = ({ text, Button }: { text: string; Button?: ReactNode }) =
       }}>
       <Text>{text}</Text>
       {Button && Button}
+      {children}
     </SafeAreaView>
   );
 };
