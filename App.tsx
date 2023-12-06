@@ -1,20 +1,31 @@
+import { NavigationContainer } from "@react-navigation/native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View } from "react-native";
+import { Provider } from "react-redux";
 
+import {
+  HomeScreen,
+  LocationScreen,
+  NotificationsScreen,
+  OnboardingHomeScreen,
+  PaymentMethodsScreen,
+} from "./src/screens";
+import store from "./src/store";
+
+const MainStack = createNativeStackNavigator();
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
+    <Provider store={store}>
       <StatusBar style="auto" />
-    </View>
+      <NavigationContainer>
+        <MainStack.Navigator>
+          <MainStack.Screen name="OnboardingHome" component={OnboardingHomeScreen} />
+          <MainStack.Screen name="Notifications" component={NotificationsScreen} />
+          <MainStack.Screen name="Location" component={LocationScreen} />
+          <MainStack.Screen name="PaymentMethods" component={PaymentMethodsScreen} />
+          <MainStack.Screen name="Home" component={HomeScreen} />
+        </MainStack.Navigator>
+      </NavigationContainer>
+    </Provider>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-});
