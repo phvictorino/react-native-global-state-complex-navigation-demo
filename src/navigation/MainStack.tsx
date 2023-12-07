@@ -3,13 +3,16 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { StatusBar } from "expo-status-bar";
 
 import { OnboardingStack } from "./OnboardingStack";
-import { HomeScreen, WelcomeScreen } from "../screens";
+import { HomeScreen } from "../screens/main";
+import { UserRegistrationScreen } from "../screens/main/UserRegistration.screen";
+import { WelcomeScreen } from "../screens/onboarding";
 import { useAppSelector } from "../store";
 
 export type MainStackParamList = {
   Welcome: undefined;
   OnboardingStack: undefined;
   Home: undefined;
+  UserRegistration: undefined;
 };
 
 const Main = createNativeStackNavigator<MainStackParamList>();
@@ -34,6 +37,7 @@ export const Router = () => {
             />
           )}
           <Main.Screen name="Home" component={HomeScreen} />
+          <Main.Screen name="UserRegistration" component={UserRegistrationScreen} />
         </Main.Navigator>
       </NavigationContainer>
     </>

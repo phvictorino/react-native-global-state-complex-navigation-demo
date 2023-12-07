@@ -1,6 +1,6 @@
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
-import { LocationScreen, NotificationsScreen, PaymentMethodsScreen } from "../screens";
+import { LocationScreen, NotificationsScreen, PaymentMethodsScreen } from "../screens/onboarding";
 import { useAppSelector } from "../store";
 
 export type OnboardingStackParamList = {
