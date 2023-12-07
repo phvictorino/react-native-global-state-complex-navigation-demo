@@ -5,24 +5,10 @@ import { Layout } from "../../components/Layout";
 import { PrimaryButton } from "../../components/PrimaryButton";
 import { MainStackParamList } from "../../router/MainStack";
 import { useAppDispatch } from "../../store";
-import {
-  setHasSeenLocationScreen,
-  setHasSeenNotificationsScreen,
-  setHasSeenPaymentMethodsScreen,
-} from "../../store/settings.slice";
 
 type Props = NativeStackScreenProps<MainStackParamList, "Home">;
 export const HomeScreen = ({ navigation }: Props) => {
   const dispatch = useAppDispatch();
-
-  const handleResetAll = () => {
-    dispatch(setHasSeenPaymentMethodsScreen(false));
-    dispatch(setHasSeenNotificationsScreen(false));
-    dispatch(setHasSeenLocationScreen(false));
-    setTimeout(() => {
-      navigation.navigate("OnboardingStack");
-    }, 500);
-  };
 
   const handleRegistrationButton = () => {
     navigation.navigate("UserRegistration");
