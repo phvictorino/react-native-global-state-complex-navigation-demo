@@ -1,7 +1,7 @@
-import { Layout } from "../components/Layout";
-import { PrimaryButton } from "../components/PrimaryButton";
-import { useAppDispatch } from "../store";
-import { setHasSeenPaymentMethodsScreen } from "../store/settings.slice";
+import { Layout } from "../../components/Layout";
+import { PrimaryButton } from "../../components/PrimaryButton";
+import { useAppDispatch } from "../../store";
+import { setHasSeenPaymentMethodsScreen } from "../../store/settings.slice";
 
 export const PaymentMethodsScreen = () => {
   const dispatch = useAppDispatch();
